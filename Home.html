@@ -1,0 +1,52 @@
+<!doctype html>
+<head>
+    <title>Hard</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            color: grey;
+        }
+        body {
+            display: grid;
+            grid-template-columns: 10% 1fr 10%;
+            grid-template-rows: 60px auto auto;
+        }
+
+        .strip{
+            grid-column: 1/4;
+            grid-row: 1/2;
+            background-color: orange;
+        }
+        .miniGray{
+            background-color: grey;
+            grid-column: 1/4;
+            grid-row: 2/3;
+        }
+        .grey{
+            color: white;
+            grid-column: 2/3;
+            grid-row: 2/3;
+        }
+        section{
+            grid-column: 2/3;
+            grid-row: 3/4;
+
+            display: grid;
+            grid-auto-columns: 4fr 6fr;
+            background-color: aqua;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="strip"></div>
+    <img class="logo" src="logo2.png">
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div class="icons">
+    </div>
