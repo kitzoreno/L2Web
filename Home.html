@@ -1,52 +1,43 @@
 <!doctype html>
-<head>
-    <title>Hard</title>
-    <style>
-        * {
-            margin: 0px;
-            padding: 0px;
-            color: grey;
-        }
-        body {
-            display: grid;
-            grid-template-columns: 10% 1fr 10%;
-            grid-template-rows: 60px auto auto;
-        }
 
-        .strip{
-            grid-column: 1/4;
-            grid-row: 1/2;
-            background-color: orange;
-        }
-        .miniGray{
-            background-color: grey;
-            grid-column: 1/4;
-            grid-row: 2/3;
-        }
-        .grey{
-            color: white;
-            grid-column: 2/3;
-            grid-row: 2/3;
-        }
-        section{
-            grid-column: 2/3;
-            grid-row: 3/4;
-
-            display: grid;
-            grid-auto-columns: 4fr 6fr;
-            background-color: aqua;
-        }
-        
-    </style>
+<head>    <!-- Title for the index.html page -->
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- separation of presentation and content -->
 </head>
+
 <body>
-    <div class="strip"></div>
-    <img class="logo" src="logo2.png">
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
-    </nav>
-    <div class="icons">
-    </div>
+    <header>
+        <nav>
+            <a href="Home.html">Home</a>
+            <a href="Shop.html">Store</a>
+            <a href="AboutUs.html">About Us</a>
+            <a href="MyAccount.html">My Account</a>
+            <a href="shoppingcart.html">Cart</a>
+            <!-- Nav links for the websites, Home, Contacts ect -->
+
+        </nav>
+        <div class="Navright">
+            <!--            <a href= "#" class="sign">Sign Up</a>-->
+
+        </div>
+        <img class="logo" src="images/logo.png" id="logo" alt="logo">
+        <!-- Logo for the website -->
+        
+        <script type="text/javascript">
+            let progress = document.getElementById('progressbar');
+            let totalHeight= document.body.scrollHeight - window.innerHeight;
+            window.onscroll = function(){
+                let progressHeight = (window.pageYOffset / totalHeight) * 100;
+                progress.style.height = progressHeight + "%";
+            }
+</script>
+<!-- Javascript for scrollbar -->
+        
+
+    </header>
+    <div class="gradient-box"></div>  
+        <!-- Gradient box for the layout -->
+</div>
+</div>
+    
