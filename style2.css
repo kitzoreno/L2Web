@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: sweet;
+    src: url(fonts/sweet/varsity_regular.ttf);
+}
+
+/* Header and background image */
+
+html {
+    background-image: url('./images/wallpaper1.png');
+    background-size: 100vw 100vh;
+
+}
+
+nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+nav img {
+    width: 40%;
+    margin: 10px 0px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: red;
+}
+
+.row {
+    width: 90%;
+    margin: 10px auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
