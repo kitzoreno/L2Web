@@ -1,4 +1,4 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
 }
@@ -8,7 +8,6 @@
     src: url(fonts/sweet/varsity_regular.ttf);
 }
 
-/* Header and background image */
 
 html {
     background-image: url('./images/wallpaper1.png');
@@ -48,7 +47,7 @@ nav a:hover {
 
 
 
-/* Support/Contact */
+
 
 
 
@@ -313,7 +312,6 @@ section::before{
 
 
 
-/* Home page */
 
 
 
@@ -352,4 +350,4 @@ section::before{
     margin-top: 30px;
 
 }
-
+ */
