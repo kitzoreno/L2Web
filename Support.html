@@ -17,6 +17,10 @@
             <a href="Support.html">SUPPORT</a>
         </nav>  
     </header>
+
+    <div id="progressbar"></div>
+    <div id="srollPath"></div>
+
     <div class="container">
         <form onsubmit="sendEmail(); reset(); return false;">
             <h3>GET IN TOUCH</h3>
@@ -45,6 +49,14 @@
 );
         }
     </script>
+            <script type="text/javascript">
+                let progress = document.getElementById('progressbar');
+                let totalHeight = document.body.scrollHeight - window.innerHeight;
+                window.onscroll = function(){
+                    let progressHeight =(window.pageYOffset / totalHeight) * 100;
+                    progress.style.height = progressHeight * "%";
+                }
+            </script>
 </body>
 
 <!-- 1a31b883-91fb-4f9e-88b7-7ad397f0d557 -->

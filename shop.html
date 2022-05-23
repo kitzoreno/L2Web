@@ -15,12 +15,17 @@
             <a href="Support.html">SUPPORT</a>
         </nav>     
     </header>
+
+    <div id="progressbar"></div>
+    <div id="srollPath"></div>
+
+
     <div class="Swrapper">                  <!-- Wraps all the code together (all the div class inside "wrapper") -->
         <div class="Body">                   <!-- div class for main box where you put all the images in, spans ect  -->
             <div class="Scontainer">             <!-- This is the div class for the hovering effect of the green shape and transitions for showing the buy now button sizes ect  -->
                 <div class="Scard">                        <!-- Card -->
                     <div class="imgBx">                  <!-- Images -->
-                        <img src="images/Brown jacket copy.png" alt="Brown Jacket">                <!-- Image for product/shoes -->
+                        <img src="images/Brown jacket.png" alt="Brown Jacket">                <!-- Image for product/shoes -->
                     </div>
                     <!-- Content inside the Body: image, Buy now button, sizes and Price -->
                     <div class="contentBx">                              
@@ -45,7 +50,7 @@
             <div class="Scontainer">
                 <div class="Scard">
                     <div class="imgBx">
-                        <img src="images/Green Green Jacket copy.png" alt="Greeeeeen Jacket"> <!-- Alt = specific name of the product -->
+                        <img src="images/Green Green Jacket copy 2.png" alt="Greeeeeen Jacket"> <!-- Alt = specific name of the product -->
                     </div>
                     <div class="contentBx">
                         <h2>Green Pluto Jacket</h2>
@@ -70,7 +75,7 @@
             <div class="Scontainer">
                 <div class="Scard">
                     <div class="imgBx">
-                        <img src="images/Green Jacket copy.png" alt="Green Jacket">
+                        <img src="images/Green Jacket copy 2.png" alt="Green Jacket">
                     </div>
                     <div class="contentBx">
                         <h2>Evergreen Jacket</h2>
@@ -142,10 +147,10 @@
             <div class="Scontainer">
                 <div class="Scard">
                     <div class="imgBx">
-                        <img src="images/white copy.png" alt="White Jacket">
+                        <img src="images/Black Jacket copy.png" alt="Black Jacket">
                     </div>
                     <div class="contentBx">
-                        <h2>White Blaze</h2>
+                        <h2>Black Night</h2>
                         <div class="size">
                             <h3>Size :</h3>
                             <span>7</span>
@@ -161,4 +166,13 @@
                 </div>
             </div>
         </div>
+
+        <script type="text/javascript">
+            let progress = document.getElementById('progressbar');
+            let totalHeight = document.body.scrollHeight - window.innerHeight;
+            window.onscroll = function(){
+                let progressHeight =(window.pageYOffset / totalHeight) * 100;
+                progress.style.height = progressHeight * "%";
+            }
+        </script>
 </body>
