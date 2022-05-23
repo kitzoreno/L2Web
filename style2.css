@@ -12,14 +12,15 @@
 
 html {
     background-image:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(./images/wallpaper1.png);
-    background-size: 100vw 100vh;
+    background-size: 400vw 400vh;
+    background-repeat: no-repeat;
 
 }
 
 nav {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(6,1fr);
+    grid-template-columns: repeat(5,1fr);
     align-items: center;
     justify-items: center;
 }
@@ -68,28 +69,11 @@ nav a {
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    text-decoration: none;
 }
 
 
-span{
-    background: #009688;
-    height: 100%;
-    width: 0;
-    border-radius: 25px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-    transition: 0.5s;
-}
 
-button:hover span{
-    width: 100%;
-}
-
-button:hover{
-    border: none;
-}
 
 
 /* End of Home Page */
@@ -167,7 +151,7 @@ button:hover{
 
 .container{
     width: 100%;
-    height: 100vh;
+    height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -216,124 +200,222 @@ form button{
 /* Shop */
 
 
-.Scontainer{
+.Body {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 40px 0;
+    min-height: 50vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
 }
 
-.Scontainer .Scard{
+
+.Swrapper {
+    width: 80%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.Scontainer {
     position: relative;
-    min-width: 320px;
-    height: 440px;
-    box-shadow: inset 5px 5px 5px rgba(0,0,0,0.2),
-                inset -5px -5px 15px rgba(255,255,255,0.1),
-                5px 5px 5px rgba(0,0,0,0.3),
-                -5px -5px 15px rgba(255,255,255,0.1);
-                border-radius: 15px;
-                margin: 30px;
 }
 
 
-.Scontainer .Scard .Sbox{
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
-    background: #2a2b2f;
-    border: 2px solid #1e1f23;
-    border-radius: 15px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    transition: 0.5s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.Scontainer .Scard {
+    position: relative;
+    width: 320px;
+    height: 450px;
+    background: #232323;
+    border-radius: 20px;
     overflow: hidden;
 }
 
-.Scontainer .Scard .Sbox::before{
+/* Code for .body which makes the outer border of the card */
+
+.Scontainer .Scard:before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 50%;
+    width: 100%;
     height: 100%;
-    background: rgba(255,255,255,0.05);
-    pointer-events: none;
+    background: #9bdc28;
+    clip-path: circle(150px at 80% 20%);
+    transition: 0.5s ease-in-out;
+
 }
 
-.Scontainer .Scard .Sbox:hover{
-    transform: translateY(-50px);
-    box-shadow: 0 20px 70px rgba(0,0,0,0.5);
+/* Card before transition */
+
+
+.Scontainer .Scard:hover:before {
+    clip-path: circle(300px at 80% -20%);
 }
 
-.Scontainer .Scard .Sbox .Scontent{
-    padding: 20px;
-    text-align: center;
-}
-
-.Scontainer .Scard .Sbox .Scontent h2{
+.Scontainer .Scard:after {
+    content: 'Foreign';
     position: absolute;
-    top: -10px;
-    right: 30px;
-    font-size: 8em;
-    color: rgba(255,255,255,0.05);
+    top: 30%;
+    left: -20%;
+    font-size: 12em;
+    font-weight: 800;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.04);
 }
 
-.Scontainer .Scard .Sbox .Scontent h3{
-    font-size: 1.8em;
-    color: rgba(255,255,255,0.5);
-    z-index: 1;
+/* code makes pictures move */
+
+.Scontainer .Scard .imgBx {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10000;
+    width: 100%;
+    height: 220px;
     transition: 0.5s;
+    align-items: center;
 }
 
-.Scontainer .Scard .Sbox .Scontent p{
-    font-size: 16px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.5);
-    z-index: 1;
-    transition: 0.5s;
+/* product is in the card and can move smoothly */
+
+.Scontainer .Scard:hover .imgBx {
+    top: 0%;
+    transform: translateY(0%);
 }
 
-.Scontainer .Scard .Sbox .Scontent a{
+.Scontainer .Scard .imgBx img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(360deg);
+    width: 200px;
+}
+
+/* the product has been rotated from its orginal */
+
+.Scontainer .Scard .contentBx {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.Scontainer .Scard:hover .contentBx {
+    height: 210px;
+}
+
+.Scontainer .Scard:hover .contentBx h2 {
     position: relative;
-    display: inline-block;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #9bdc28;
+}
+
+/* all of the content, if removed, the card and container are removed */
+
+.Scontainer .Scard .contentBx .size,
+.Scontainer .Scard .contentBx .color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 8px 20px;
-    background: #000;
-    margin-top: 15px;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: 400;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* makes the card and body not touch each (padding) */
+
+.Scontainer .Scard:hover .contentBx .size {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+
+/* Shows the sizes of the product */
+
+.Scontainer .Scard:hover .contentBx .color {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.6s;
+}
+
+/* removed the div class (color) in html, instead put price
+This shows the price of the product */
+
+.Scontainer .Scard .contentBx .size h3,
+.Scontainer .Scard .contentBx .color h3 {
     color: #fff;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    font-weight: 300;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-left: 10px;
 }
 
-.Scontainer .Scard:nth-child(1) .Sbox .Scontent a{
-    background: #81c644;
+/* makes the color (price) look white and has more depth */
+
+.Scontainer .Scard .contentBx .size span {
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 14px;
+    display: inline-block;
+    color: #111;
+    background: #fff;
+    margin: 0 5px;
+    transition: 0.5s;
+    color: #111;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-.Scontainer .Scard:nth-child(2) .Sbox .Scontent a{
-    background: #81c644;
+/* this shows the white boxes of sizes */
+
+.Scontainer .Scard .contentBx .size span:hover {
+    background: #9bdc28;
 }
 
-.Scontainer .Scard:nth-child(3) .Sbox .Scontent a{
-    background: #81c644;
+.Scontainer .Scard .contentBx .color span {
+    width: 20px;
+    height: 20px;
+    background: #ff0;
+    border-radius: 50%;
+    margin: 0 5px;
+    margin-top: -15px;
+    cursor: pointer;
 }
 
-.Scontainer .Scard:nth-child(4) .Sbox .Scontent a{
-    background: #81c644;
+/* when you hover over the sizes it shows a green color */
+
+
+.Scontainer .Scard .contentBx a {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #fff;
+    border-radius: 4px;
+    margin-top: -5px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #111;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.5s;
 }
 
-.Scontainer .Scard:nth-child(5) .Sbox .Scontent a{
-    background: #81c644;
+.Scontainer .Scard:hover .contentBx a {
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.75s;
 }
 
-.Scontainer .Scard:nth-child(6) .Sbox .Scontent a{
-    background: #81c644;
-}
 
 /* Shop */
+
