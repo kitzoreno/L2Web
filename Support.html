@@ -18,10 +18,15 @@
         </nav>  
     </header>
 
+
+    <!-- Div id for the scroll bar -->
     <div id="progressbar"></div>
     <div id="srollPath"></div>
+     
 
-    <div class="container">
+ 
+    <div class="container">     
+           <!-- Javascript for the support page-->
         <form onsubmit="sendEmail(); reset(); return false;">
             <h3>GET IN TOUCH</h3>
             <input type="text" id="name" placeholder="Your Name" required>
@@ -49,6 +54,8 @@
 );
         }
     </script>
+
+    <!-- Javascript for the scrollbar -->
             <script type="text/javascript">
                 let progress = document.getElementById('progressbar');
                 let totalHeight = document.body.scrollHeight - window.innerHeight;

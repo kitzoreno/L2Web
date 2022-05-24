@@ -3,9 +3,10 @@
     padding: 0;
 }
 
+/* Custom Font */
 @font-face {
     font-family: sweet;
-    src: url(fonts/sweet/varsity_regular.ttf);
+    src: url('fonts/sweet/varsity_regular.ttf');
 }
 
 /* Header and background image */ /* Home page */
@@ -17,6 +18,8 @@ html {
 
 }
 
+/* grid columns for nav links */
+
 nav {
     width: 100%;
     display: grid;
@@ -25,12 +28,15 @@ nav {
     justify-items: center;
 }
 
+/* code of the logo */
+
 nav img {
     width: 40%;
     margin: 10px 0px;
 }
 
 nav a {
+    font-family: sweet;
     text-decoration: none;
     color: #fff;
     text-transform: uppercase;
@@ -421,6 +427,8 @@ This shows the price of the product */
 
 
 /* Scroll Bar JavaScript */
+
+/* code for scroll bar */
 
 ::-webkit-scrollbar{
     width: 0;
